@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AMAYAD — Asociación Mexicana de Agrivoltaics y Agricultura Digital</title>
+<meta name="description" content="AMAYAD: donde la energía solar y la agricultura se encuentran. Asociación fundada en 2024 en México.">
+<meta name="theme-color" content="#0b2545">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230b2545'/%3E%3Cpath d='M32 8a24 24 0 0 0 0 48z' fill='%23f5a524'/%3E%3Cpath d='M32 56c14-6 18-20 12-36-8 6-14 18-12 36z' fill='%233fa34d'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<!--
+  AMAYAD website prototype — v2.3.
+  Legal entity: Asociación Mexicana de Agrivoltaics y Agricultura Digital, A.C.
+  [VERIFICATION REQUIRED] Confirm exact registered name, "A.C." status, RFC and
+  registered address against the constitutive deed before publishing any of
+  these details publicly.
+-->
+<body>
+<a class="skip" href="#main" data-i18n="ui.skip">Saltar al contenido</a>
+
+<header class="site-header">
+  <div class="bar wrap">
+    <a class="brand" href="#home" data-tab-link="home" aria-label="AMAYAD">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="30" fill="#0b2545"/>
+        <path d="M32 8a24 24 0 0 0 0 48z" fill="#f5a524"/>
+        <g stroke="#f5a524" stroke-width="3" stroke-linecap="round"><path d="M10 32H4M13 19l-4-3M13 45l-4 3"/></g>
+        <path d="M32 56c14-6 18-20 12-36-8 6-14 18-12 36z" fill="#3fa34d"/>
+        <path d="M33 54c2-10 5-18 10-28" stroke="#0b2545" stroke-width="1.6" fill="none"/>
+      </svg>
+      <span class="brand-text"><strong>AMAYAD</strong><small data-i18n="brand.tagline">Agrivoltaica + Agricultura Digital</small></span>
+    </a>
+    <button type="button" class="search-trigger" data-open-search aria-haspopup="dialog">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <span class="st-text" data-i18n="ui.searchPh">Buscar en el sitio…</span><kbd class="st-kbd">/</kbd>
+    </button>
+    <div class="bar-right">
+      <div class="lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:ui.language">
+        <button type="button" data-lang="es" lang="es">ES</button>
+        <button type="button" data-lang="en" lang="en">EN</button>
+        <button type="button" data-lang="fr" lang="fr">FR</button>
+        <button type="button" data-lang="de" lang="de">DE</button>
+        <button type="button" data-lang="it" lang="it">IT</button>
+      </div>
+      <button type="button" class="btn btn-ghost-dark btn-sm login-btn" data-open-login>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="login-text" data-i18n="ui.login">Acceso miembros</span>
+      </button>
+      <button type="button" class="btn btn-sun btn-sm hide-md" data-open-register data-i18n="cta.request">Solicitar membresía</button>
+    </div>
+  </div>
+  <nav class="tabs-nav" aria-label="Secciones" data-i18n-attr="aria-label:ui.sections">
+    <div class="wrap tabs-scroll" id="mainTabs">
+      <a href="#home" data-tab-link="home" data-i18n="nav.home">Inicio</a>
+      <a href="#about" data-tab-link="about" data-i18n="nav.about">Nosotros</a>
+      <a href="#membership" data-tab-link="membership" data-i18n="nav.membership">Membresía</a>
+      <a href="#programs" data-tab-link="programs" data-i18n="nav.programs">Programas</a>
+      <a href="#courses" data-tab-link="courses" data-i18n="nav.courses">Cursos y talleres</a>
+      <a href="#dachimilco" data-tab-link="dachimilco" data-i18n="nav.dachimilco">Dachimilco</a>
+      <a href="#regions" data-tab-link="regions" data-i18n="nav.regions">Regiones</a>
+      <a href="#events" data-tab-link="events" data-i18n="nav.events">Eventos</a>
+      <a href="#partnerships" data-tab-link="partnerships" data-i18n="nav.partnerships">Alianzas</a>
+      <a href="#legislative" data-tab-link="legislative" data-i18n="nav.legislative">Asuntos legislativos</a>
+      <a href="#library" data-tab-link="library" data-i18n="nav.library">Biblioteca</a>
+      <a href="#members" data-tab-link="members" data-i18n="nav.members">Miembros</a>
+      <a href="#contact" data-tab-link="contact" data-i18n="nav.contact">Contacto</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ============================ HOME ============================ -->
+<section class="panel" id="panel-home" data-panel="home">
+  <div class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="home.eyebrow"></p>
+        <h1 class="hero-title" data-i18n-html="home.title"></h1>
+        <p class="lead" data-i18n="home.lead"></p>
+        <div class="cta-row">
+          <button type="button" class="btn btn-sun btn-lg" data-open-register data-i18n="cta.request"></button>
+          <a class="btn btn-ghost btn-lg" href="#programs" data-tab-link="programs" data-i18n="home2.cta2"></a>
+        </div>
+        <p class="hero-note"><span class="dot"></span><span data-i18n="home.founded"></span></p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 340" class="hero-svg">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd27a"/><stop offset=".55" stop-color="#f5a524"/><stop offset="1" stop-color="#e07a1f"/></linearGradient>
+            <linearGradient id="field" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5cc06a"/><stop offset="1" stop-color="#1f7a3a"/></linearGradient>
+            <linearGradient id="pv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d4e89"/><stop offset="1" stop-color="#0b2545"/></linearGradient>
+            <clipPath id="round"><rect x="0" y="0" width="420" height="340" rx="28"/></clipPath>
+          </defs>
+          <g clip-path="url(#round)">
+            <rect width="420" height="340" fill="#fff6e3"/>
+            <circle cx="320" cy="80" r="52" fill="url(#sky)"/>
+            <g stroke="#f5a524" stroke-width="5" stroke-linecap="round" opacity=".8"><path d="M320 8v10M392 80h-10M371 29l-7 7M269 29l7 7M248 80h10"/></g>
+            <path d="M0 210 Q110 170 210 200 T420 190 V340 H0Z" fill="url(#field)"/>
+            <g fill="#2f8f45">
+              <path d="M30 300c6-22 14-30 24-34-4 14-10 26-24 34z"/><path d="M70 312c4-26 16-36 28-40-4 16-12 30-28 40z"/>
+              <path d="M300 318c6-22 14-30 24-34-4 14-10 26-24 34z"/><path d="M360 306c4-26 16-36 28-40-4 16-12 30-28 40z"/>
+            </g>
+            <g transform="translate(60 150)">
+              <rect x="18" y="40" width="6" height="90" fill="#33415c"/><rect x="128" y="40" width="6" height="90" fill="#33415c"/>
+              <polygon points="0,40 150,20 160,50 10,70" fill="url(#pv)"/>
+              <g stroke="#6ea8fe" stroke-width="1" opacity=".55"><path d="M37 35 47 65M75 30 85 60M112 25 122 55M5 55 155 35"/></g>
+            </g>
+            <g transform="translate(220 170)">
+              <rect x="18" y="40" width="6" height="90" fill="#33415c"/><rect x="128" y="40" width="6" height="90" fill="#33415c"/>
+              <polygon points="0,40 150,20 160,50 10,70" fill="url(#pv)"/>
+              <g stroke="#6ea8fe" stroke-width="1" opacity=".55"><path d="M37 35 47 65M75 30 85 60M112 25 122 55M5 55 155 35"/></g>
+            </g>
+            <g fill="#8fd694">
+              <ellipse cx="110" cy="285" rx="14" ry="8"/><ellipse cx="150" cy="290" rx="14" ry="8"/><ellipse cx="190" cy="284" rx="14" ry="8"/>
+              <ellipse cx="270" cy="300" rx="14" ry="8"/><ellipse cx="310" cy="296" rx="14" ry="8"/>
+            </g>
+            <g transform="translate(120 70)">
+              <rect x="-14" y="-3" width="28" height="6" rx="3" fill="#0b2545"/>
+              <path d="M-26 -8h16M10 -8h16" stroke="#0b2545" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="0" cy="4" r="3" fill="#3fa34d"/>
+              <path d="M0 8 L-22 70 M0 8 L22 70" stroke="#3fa34d" stroke-width="1.5" stroke-dasharray="4 4" opacity=".7"/>
+            </g>
+          </g>
+        </svg>
+        <div class="chip chip-sun" data-i18n="home.chipSolar"></div>
+        <div class="chip chip-leaf" data-i18n="home.chipAgri"></div>
+        <div class="chip chip-blue" data-i18n="home.chipMeet"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key benefits strip -->
+  <div class="benefit-strip">
+    <div class="wrap">
+      <h2 class="strip-title" data-i18n="home2.benefitsTitle"></h2>
+      <div class="kb-grid" id="keyBenefits"></div>
+      <p class="fine" data-i18n="home2.benefitsNote"></p>
+    </div>
+  </div>
+
+  <div class="wrap section">
+    <div class="section-head center">
+      <h2 data-i18n="home.worldsTitle"></h2>
+      <p class="sub" data-i18n="home.worldsLead"></p>
+    </div>
+    <div class="worlds">
+      <article class="world world-sun">
+        <div class="world-icon" aria-hidden="true">☀</div>
+        <h3 data-i18n="home.solarTitle"></h3>
+        <p data-i18n="home.solarText"></p>
+        <ul class="ticks" data-i18n-list="home.solarList"></ul>
+      </article>
+      <article class="world world-meet">
+        <div class="world-icon" aria-hidden="true">⇄</div>
+        <h3 data-i18n="home.meetTitle"></h3>
+        <p data-i18n="home.meetText"></p>
+        <ul class="ticks" data-i18n-list="home.meetList"></ul>
+      </article>
+      <article class="world world-leaf">
+        <div class="world-icon" aria-hidden="true">❦</div>
+        <h3 data-i18n="home.agriTitle"></h3>
+        <p data-i18n="home.agriText"></p>
+        <ul class="ticks" data-i18n-list="home.agriList"></ul>
+      </article>
+    </div>
+  </div>
+
+  <!-- Quick links -->
+  <div class="band band-soft">
+    <div class="wrap section">
+      <div class="section-head">
+        <h2 data-i18n="home2.quickTitle"></h2>
+      </div>
+      <div class="quick-grid" id="quickLinks"></div>
+    </div>
+  </div>
+
+  <div class="band band-blue">
+    <div class="wrap section">
+      <div class="section-head">
+        <h2 data-i18n="home.mexicoTitle"></h2>
+        <p class="sub" data-i18n="home.mexicoLead"></p>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="stat-n" data-i18n="home.stat1n"></span><span class="stat-l" data-i18n="home.stat1l"></span></div>
+        <div class="stat"><span class="stat-n" data-i18n="home.stat2n"></span><span class="stat-l" data-i18n="home.stat2l"></span></div>
+        <div class="stat"><span class="stat-n" data-i18n="home.stat3n"></span><span class="stat-l" data-i18n="home.stat3l"></span></div>
+      </div>
+      <p class="fine" data-i18n="home.statsSource"></p>
+    </div>
+  </div>
+
+  <!-- Featured: Dachimilco pilot + regions -->
+  <div class="wrap section">
+    <div class="feature-grid">
+      <article class="feature feature-dachi">
+        <div class="feature-art" aria-hidden="true">
+          <svg viewBox="0 0 320 160" preserveAspectRatio="xMidYMid slice"><rect width="320" height="160" fill="#eaf7ec"/><path d="M0 118 Q80 100 160 116 T320 112 V160 H0Z" fill="#7fc8e8"/><rect x="30" y="92" width="260" height="26" rx="6" fill="#3fa34d"/><g fill="#1f7a3a"><circle cx="60" cy="90" r="7"/><circle cx="95" cy="88" r="6"/><circle cx="210" cy="89" r="7"/><circle cx="250" cy="90" r="6"/></g><g transform="translate(110 40)"><rect x="8" y="22" width="4" height="34" fill="#33415c"/><rect x="88" y="22" width="4" height="34" fill="#33415c"/><polygon points="0,22 96,8 100,24 4,38" fill="#1d4e89"/></g><circle cx="270" cy="34" r="18" fill="#f5a524"/></svg>
+        </div>
+        <div class="feature-body">
+          <span class="status status-conversation" data-i18n="dachi.statusTag"></span>
+          <p class="eyebrow" data-i18n="dachi.eyebrow"></p>
+          <h2 data-i18n="dachi.homeTitle"></h2>
+          <p data-i18n="dachi.homeText"></p>
+          <div class="cta-row">
+            <a class="btn btn-blue" href="#dachimilco" data-tab-link="dachimilco" data-i18n="dachi.homeCta"></a>
+            <button type="button" class="btn btn-ghost-dark" data-open-form="dachimilco" data-i18n="dachi.supportCta"></button>
+          </div>
+        </div>
+      </article>
+      <article class="feature feature-regions">
+        <div class="feature-body">
+          <span class="status status-partner" data-i18n="reg2.statusTag"></span>
+          <p class="eyebrow" data-i18n="reg2.eyebrow"></p>
+          <h2 data-i18n="reg2.homeTitle"></h2>
+          <p data-i18n="reg2.homeText"></p>
+          <div class="mini-map" id="homeMiniMap" aria-hidden="true"></div>
+          <a class="btn btn-ghost-dark" href="#regions" data-tab-link="regions" data-i18n="reg2.homeCta"></a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- Next event + latest news -->
+  <div class="wrap section">
+    <div class="split">
+      <div>
+        <h2 class="h-md" data-i18n="home2.nextEventTitle"></h2>
+        <div id="homeNextEvent"></div>
+      </div>
+      <div>
+        <h2 class="h-md" data-i18n="home2.newsTitle"></h2>
+        <div id="homeNews" class="news-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Newsletter + Discord -->
+  <div class="band band-merge">
+    <div class="wrap section">
+      <div class="community">
+        <div class="community-card nl-card">
+          <span class="tag" data-i18n="home2.newsletterTag"></span>
+          <h2 data-i18n="home2.newsletterTitle"></h2>
+          <p data-i18n="home2.newsletterText"></p>
+          <form class="form nl-form" data-nl novalidate>
+            <div class="nl-row">
+              <label class="sr-only" for="nl_email_home" data-i18n="form.email"></label>
+              <input id="nl_email_home" name="email" type="email" autocomplete="email" required data-i18n-attr="placeholder:f.emailPh">
+              <button type="submit" class="btn btn-blue" data-i18n="cta.subscribe"></button>
+            </div>
+            <div class="field check"><input type="checkbox" id="nl_consent_home" name="consent" required><label for="nl_consent_home"><span data-i18n="form.consent"></span> <a href="#privacy" data-open-privacy data-i18n="form.privacyLink"></a></label></div>
+            <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <p class="form-error" role="alert" hidden></p>
+            <div class="form-success" hidden role="status"></div>
+          </form>
+        </div>
+        <div class="community-card discord-card">
+          <span class="tag" data-i18n="home2.discordTag"></span>
+          <h2 data-i18n="home2.discordTitle"></h2>
+          <p data-i18n="home2.discordText"></p>
+          <a class="btn btn-discord" href="#" data-discord>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 5.3A17 17 0 0 0 15.8 4l-.5 1a15.7 15.7 0 0 0-6.6 0L8.2 4A17 17 0 0 0 4 5.3C1.4 9.2.7 13 1 16.7a17 17 0 0 0 5.2 2.6l1.1-1.8c-.6-.2-1.2-.5-1.7-.9l.4-.3a12 12 0 0 0 12 0l.4.3c-.5.4-1.1.7-1.7.9l1.1 1.8a17 17 0 0 0 5.2-2.6c.4-4.3-.7-8-3-11.4ZM8.7 14.5c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg>
+            <span data-discord-label></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap section">
+    <div class="section-head center">
+      <h2 data-i18n="home.waysTitle"></h2>
+      <p class="sub" data-i18n="home.waysLead"></p>
+    </div>
+    <div class="ways">
+      <button type="button" class="way way-primary" data-open-register><span class="way-t" data-i18n="cta.request"></span><span class="way-d" data-i18n="home.wayMember"></span></button>
+      <button type="button" class="way" data-open-form="sponsor"><span class="way-t" data-i18n="cta.sponsor"></span><span class="way-d" data-i18n="home2.waySponsor"></span></button>
+      <button type="button" class="way" data-open-form="partner"><span class="way-t" data-i18n="cta.partner"></span><span class="way-d" data-i18n="home.wayPartner"></span></button>
+      <button type="button" class="way" data-open-form="committee"><span class="way-t" data-i18n="cta.wg"></span><span class="way-d" data-i18n="home.wayWg"></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ABOUT ============================ -->
+<section class="panel" id="panel-about" data-panel="about" hidden>
+  <div class="page-head page-head-leaf">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="about.eyebrow"></p>
+      <h1 data-i18n="about.title"></h1>
+      <p class="lead" data-i18n="about.lead"></p>
+    </div>
+  </div>
+  <div class="wrap">
+    <nav class="jump" aria-label="On this page" data-i18n-attr="aria-label:ui.onThisPage">
+      <a href="#about-mission" data-jump data-i18n="about.jMission"></a>
+      <a href="#about-history" data-jump data-i18n="about.jHistory"></a>
+      <a href="#about-founders" data-jump data-i18n="about.jFounders"></a>
+      <a href="#about-governance" data-jump data-i18n="about.jGovernance"></a>
+      <a href="#about-agri" data-jump data-i18n="about.jAgri"></a>
+    </nav>
+  </div>
+  <div class="wrap section" id="about-mission">
+    <div class="mv-grid">
+      <article class="mv mv-mission">
+        <span class="tag" data-i18n="about.missionTitle"></span>
+        <p class="mv-text" data-i18n="about.missionText"></p>
+      </article>
+      <article class="mv mv-vision">
+        <span class="tag" data-i18n="about.visionTitle"></span>
+        <p class="mv-text" data-i18n="about.visionText"></p>
+      </article>
+    </div>
+    <div class="about-grid">
+      <div>
+        <h2 data-i18n="home.aboutTitle"></h2>
+        <p data-i18n="home.aboutText1"></p>
+        <p data-i18n="home.aboutText2"></p>
+      </div>
+      <div>
+        <h3 data-i18n="home.objectivesTitle"></h3>
+        <ol class="objectives" id="objectivesList"></ol>
+      </div>
+    </div>
+  </div>
+  <div class="band band-soft" id="about-history">
+    <div class="wrap section">
+      <div class="section-head"><h2 data-i18n="about.historyTitle"></h2></div>
+      <ol class="timeline" id="historyList"></ol>
+    </div>
+  </div>
+  <div class="wrap section" id="about-founders">
+    <div class="section-head">
+      <h2 data-i18n="about.foundersTitle"></h2>
+      <p class="sub" data-i18n="about.foundersLead"></p>
+    </div>
+    <div class="founders" id="foundersList"></div>
+  </div>
+  <div class="band" id="about-governance">
+    <div class="wrap section">
+      <div class="section-head">
+        <h2 data-i18n="about.governanceTitle"></h2>
+        <p class="sub" data-i18n="about.governanceLead"></p>
+      </div>
+      <div class="cards-4" data-i18n-cards="about.governance" data-card-tag="about.inFormation"></div>
+      <div class="cta-row">
+        <button type="button" class="btn btn-blue" data-open-form="committee" data-i18n="cta.wg"></button>
+        <a class="btn btn-ghost-dark" href="#programs" data-tab-link="programs" data-sub-target="prog-com" data-i18n="about.seeCommittees"></a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap section" id="about-agri">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="agri.eyebrow"></p>
+      <h2 data-i18n="agri.title"></h2>
+      <p class="sub" data-i18n="agri.lead"></p>
+    </div>
+    <div class="subtabs" role="tablist" id="agriTabs" aria-label="Temas" data-i18n-attr="aria-label:ui.topics"></div>
+    <div id="agriPanels"></div>
+    <p class="fine" data-i18n="agri.sourcesNote"></p>
+  </div>
+</section>
+
+<!-- ======================== MEMBERSHIP ======================== -->
+<section class="panel" id="panel-membership" data-panel="membership" hidden>
+  <div class="page-head page-head-sun">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="mem.eyebrow"></p>
+      <h1 data-i18n="mem.title"></h1>
+      <p class="lead" data-i18n="mem.lead"></p>
+    </div>
+  </div>
+  <div class="wrap">
+    <nav class="jump" aria-label="On this page" data-i18n-attr="aria-label:ui.onThisPage">
+      <a href="#mem-tiers" data-jump data-i18n="mem2.jTiers"></a>
+      <a href="#mem-compare" data-jump data-i18n="mem2.jCompare"></a>
+      <a href="#mem-community" data-jump data-i18n="community.jump"></a>
+      <a href="#mem-why" data-jump data-i18n="mem2.jWhy"></a>
+      <a href="#mem-sponsor" data-jump data-i18n="mem2.jSponsor"></a>
+      <a href="#mem-faq" data-jump data-i18n="mem2.jFaq"></a>
+    </nav>
+  </div>
+  <div class="wrap section" id="mem-tiers">
+    <div class="founding">
+      <strong data-i18n="mem.foundingTitle"></strong>
+      <span data-i18n="mem.foundingText"></span>
+    </div>
+    <div class="tiers" id="tiersGrid"></div>
+    <p class="fine price-note" data-i18n="mem.priceNote"></p>
+    <div class="intl-block">
+      <h3 data-i18n="mem.intlTitle"></h3>
+      <p class="sub" data-i18n="mem.intlLead"></p>
+      <div class="intl-grid" id="intlGrid"></div>
+      <p class="fine" data-i18n="mem.intlNote"></p>
+    </div>
+    <p class="academic-note"><span data-i18n="mem.academicNote"></span> <a href="#academic" data-i18n="academic.link"></a></p>
+    <div class="callout callout-region">
+      <div>
+        <h3 data-i18n="reg2.memTitle"></h3>
+        <p data-i18n="reg2.memText"></p>
+      </div>
+      <a class="btn btn-blue" href="#regions" data-tab-link="regions" data-i18n="reg2.homeCta"></a>
+    </div>
+    <div class="cta-row" id="brochureRow" hidden><a class="btn btn-ghost-dark" id="brochureLink" href="#" target="_blank" rel="noopener" data-i18n="mem2.brochure"></a></div>
+  </div>
+  <div class="band band-soft" id="mem-compare">
+    <div class="wrap section">
+      <div class="section-head">
+        <h2 data-i18n="mem2.tableTitle"></h2>
+        <p class="sub" data-i18n="mem2.tableLead"></p>
+      </div>
+      <div class="table-wrap" tabindex="0"><table class="compare" id="compareTable"></table></div>
+      <p class="fine" data-i18n="mem2.tableNote"></p>
+    </div>
+  </div>
+  <div class="wrap section" id="mem-community">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="community.eyebrow"></p>
+      <h2 data-i18n="community.title"></h2>
+      <p class="sub" data-i18n="community.lead"></p>
+    </div>
+    <div class="community-grid">
+      <article class="card community-box">
+        <h3 data-i18n="community.discordTitle"></h3>
+        <p data-i18n="community.discordText"></p>
+        <ul class="ticks" data-i18n-list="community.discordList"></ul>
+        <a class="btn btn-discord btn-discord-solid" href="#" data-discord><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 5.3A17 17 0 0 0 15.8 4l-.5 1a15.7 15.7 0 0 0-6.6 0L8.2 4A17 17 0 0 0 4 5.3C1.4 9.2.7 13 1 16.7a17 17 0 0 0 5.2 2.6l1.1-1.8c-.6-.2-1.2-.5-1.7-.9l.4-.3a12 12 0 0 0 12 0l.4.3c-.5.4-1.1.7-1.7.9l1.1 1.8a17 17 0 0 0 5.2-2.6c.4-4.3-.7-8-3-11.4ZM8.7 14.5c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg><span data-discord-label></span></a>
+      </article>
+      <article class="card community-box">
+        <h3 data-i18n="community.telegramTitle"></h3>
+        <p data-i18n="community.telegramText"></p>
+        <ul class="ticks" data-i18n-list="community.telegramList"></ul>
+        <a class="btn btn-ghost-dark" data-telegram></a>
+      </article>
+    </div>
+    <p class="fine" data-i18n="community.note"></p>
+  </div>
+  <div class="wrap section" id="mem-why">
+    <div class="section-head center">
+      <h2 data-i18n="mem2.whyTitle"></h2>
+      <p class="sub" data-i18n="mem2.whyLead"></p>
+    </div>
+    <div class="why-grid">
+      <article class="world world-sun">
+        <div class="world-icon" aria-hidden="true">☀</div>
+        <h3 data-i18n="mem2.whySolarTitle"></h3>
+        <ul class="ticks" data-i18n-list="mem2.whySolar"></ul>
+      </article>
+      <article class="world world-leaf">
+        <div class="world-icon" aria-hidden="true">❦</div>
+        <h3 data-i18n="mem2.whyAgriTitle"></h3>
+        <ul class="ticks" data-i18n-list="mem2.whyAgri"></ul>
+      </article>
+    </div>
+    <div class="section-head" style="margin-top:40px">
+      <h2 class="h-md" data-i18n="mem.whoTitle"></h2>
+    </div>
+    <ul class="pill-list" data-i18n-list="mem.whoList"></ul>
+  </div>
+  <div class="band band-blue" id="mem-sponsor">
+    <div class="wrap section">
+      <div class="sponsor-grid">
+        <div>
+          <p class="eyebrow" data-i18n="mem2.sponsorEyebrow"></p>
+          <h2 data-i18n="mem2.sponsorTitle"></h2>
+          <p class="sub" data-i18n="mem2.sponsorLead"></p>
+          <div class="cta-row">
+            <button type="button" class="btn btn-sun btn-lg" data-open-form="sponsor" data-i18n="cta.sponsor"></button>
+            <a class="btn btn-ghost btn-lg" href="#" target="_blank" rel="noopener" data-pdf-link="sponsorshipDeckPdf" hidden></a>
+          </div>
+          <p class="fine" data-i18n="mem2.sponsorNote"></p>
+        </div>
+        <div class="sponsor-types" data-i18n-cards="mem2.sponsorTypes" data-card-class="stype"></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap section">
+    <div class="section-head">
+      <h2 data-i18n="mem2.testiTitle"></h2>
+      <p class="sub" data-i18n="mem2.testiLead"></p>
+    </div>
+    <div class="cards-3" id="testimonials"></div>
+  </div>
+  <div class="band band-soft" id="mem-faq">
+    <div class="wrap section">
+      <div class="section-head"><h2 data-i18n="mem2.faqTitle"></h2></div>
+      <div class="faq" id="memFaq"></div>
+      <div class="cta-row">
+        <button type="button" class="btn btn-sun btn-lg" data-open-register data-i18n="cta.request"></button>
+        <button type="button" class="btn btn-ghost-dark btn-lg" data-contact-subject="membership" data-i18n="mem2.askQuestion"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= PROGRAMS ========================= -->
+<section class="panel" id="panel-programs" data-panel="programs" hidden>
+  <div class="page-head page-head-agri">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="prog.eyebrow"></p>
+      <h1 data-i18n="prog.title"></h1>
+      <p class="lead" data-i18n="prog.lead"></p>
+    </div>
+  </div>
+  <div class="wrap section">
+    <div class="subtabs" role="tablist" data-subtabs="prog">
+      <button type="button" role="tab" data-sub="prog-amb" data-i18n="prog.tabs.amb"></button>
+      <button type="button" role="tab" data-sub="prog-yfn" data-i18n="prog.tabs.yfn"></button>
+      <button type="button" role="tab" data-sub="prog-com" data-i18n="prog.tabs.com"></button>
+      <button type="button" role="tab" data-sub="prog-courses" data-i18n="prog.tabs.courses"></button>
+      <button type="button" role="tab" data-sub="prog-handbook" data-i18n="prog.tabs.handbook"></button>
+      <button type="button" role="tab" data-sub="prog-services" data-i18n="prog.tabs.services"></button>
+    </div>
+
+    <!-- Ambassadors -->
+    <div class="subpanel" role="tabpanel" data-subpanel="prog-amb">
+      <div class="prog-head">
+        <div>
+          <span class="status status-conversation" data-i18n="prog.status.forming"></span>
+          <h2 data-i18n="prog.amb.title"></h2>
+          <p class="sub" data-i18n="prog.amb.lead"></p>
+        </div>
+        <div class="prog-actions">
+          <button type="button" class="btn btn-sun" data-open-form="ambassador" data-form-preset="apply" data-i18n="cta.apply"></button>
+          <button type="button" class="btn btn-ghost-dark" data-open-form="ambassador" data-form-preset="nominate" data-i18n="cta.nominate"></button>
+        </div>
+      </div>
+      <h3 class="h-sm" data-i18n="prog.amb.objTitle"></h3>
+      <div class="cards-3" data-i18n-cards="prog.amb.objectives" data-card-class="card card-accent"></div>
+      <h3 class="h-sm" data-i18n="prog.amb.rolesTitle"></h3>
+      <div class="roles" data-i18n-cards="prog.amb.roles" data-card-class="role"></div>
+      <div class="two-col">
+        <div class="card">
+          <h3 data-i18n="prog.amb.whoTitle"></h3>
+          <ul class="ticks" data-i18n-list="prog.amb.who"></ul>
+        </div>
+        <div class="card">
+          <h3 data-i18n="prog.amb.getTitle"></h3>
+          <ul class="ticks" data-i18n-list="prog.amb.get"></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Young Farmers -->
+    <div class="subpanel" role="tabpanel" data-subpanel="prog-yfn" hidden>
+      <div class="prog-head">
+        <div>
+          <span class="status status-conversation" data-i18n="prog.status.forming"></span>
+          <h2 data-i18n="prog.yfn.title"></h2>
+          <p class="sub" data-i18n="prog.yfn.lead"></p>
+        </div>
+        <div class="prog-actions">
+          <button type="button" class="btn btn-sun" data-open-form="youngfarmers" data-i18n="cta.apply"></button>
+        </div>
+      </div>
+      <div class="age-pill"><strong data-i18n="prog.yfn.ages"></strong> <span data-i18n="prog.yfn.agesText"></span></div>
+      <h3 class="h-sm" data-i18n="prog.yfn.rolesTitle"></h3>
+      <div class="cards-3" data-i18n-cards="prog.yfn.roles" data-card-class="card card-accent"></div>
+      <h3 class="h-sm" data-i18n="prog.yfn.actTitle"></h3>
+      <div class="cards-3" data-i18n-cards="prog.yfn.activities"></div>
+      <p class="fine" data-i18n="prog.yfn.note"></p>
+    </div>
+
+    <!-- Committees -->
+    <div class="subpanel" role="tabpanel" data-subpanel="prog-com" hidden>
+      <div class="prog-head">
+        <div>
+          <span class="status status-conversation" data-i18n="prog.status.forming"></span>
+          <h2 data-i18n="home.committeesTitle"></h2>
+          <p class="sub" data-i18n="home.committeesLead"></p>
+        </div>
+        <div class="prog-actions">
+          <button type="button" class="btn btn-sun" data-open-form="committee" data-i18n="cta.wg"></button>
+        </div>
+      </div>
+      <div class="cards-3" id="committeesList"></div>
+    </div>
+
+    <!-- Courses -->
+    <div class="subpanel" role="tabpanel" data-subpanel="prog-courses" hidden>
+      <div class="prog-head">
+        <div>
+          <span class="status status-conversation" data-i18n="prog.status.planned"></span>
+          <h2 data-i18n="prog.courses.title"></h2>
+          <p class="sub" data-i18n="prog.courses.lead"></p>
+        </div>
+        <div class="prog-actions">
+          <a class="btn btn-sun" href="#courses" data-tab-link="courses" data-i18n="courses.seeCatalog"></a>
+          <button type="button" class="btn btn-ghost-dark" data-open-form="course" data-i18n="courses.preregister"></button>
+        </div>
+      </div>
+      <div class="cards-3" data-i18n-cards="prog.courses.formats" data-card-tag="prog.status.planned"></div>
+      <h3 class="h-sm" data-i18n="prog.courses.topicsTitle"></h3>
+      <ul class="pill-list" data-i18n-list="prog.courses.topics"></ul>
+      <p class="fine" data-i18n="prog.courses.note"></p>
+    </div>
+
+    <!-- Handbook -->
+    <div class="subpanel" role="tabpanel" data-subpanel="prog-handbook" hidden>
+      <div class="prog-head">
+        <div>
+          <span class="status status-conversation" data-i18n="prog.status.planned"></span>
+          <h2 data-i18n="prog.handbook.title"></h2>
+          <p class="sub" data-i18n="prog.handbook.lead"></p>
+        </div>
+        <div class="prog-actions">
+          <button type="button" class="btn btn-sun" data-open-form="notify" data-form-preset="handbook" data-i18n="cta.notify"></button>
+          <button type="button" class="btn btn-ghost-dark" data-contact-subject="resource" data-i18n="prog.handbook.contribute"></button>
+          <a class="btn btn-blue" href="#" target="_blank" rel="noopener" data-pdf-link="handbookPdf" hidden></a>
+        </div>
+      </div>
+      <h3 class="h-sm" data-i18n="prog.handbook.tocTitle"></h3>
+      <ol class="toc" data-i18n-list="prog.handbook.toc"></ol>
+    </div>
+
+    <!-- Services -->
+    <div class="subpanel" role="tabpanel" data-subpanel="prog-services" hidden>
+      <div class="prog-head">
+        <div>
+          <span class="status status-conversation" data-i18n="prog.status.soon"></span>
+          <h2 data-i18n="prog.services.title"></h2>
+          <p class="sub" data-i18n="prog.services.lead"></p>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="card service">
+          <span class="tag" data-i18n="prog.services.soonTag"></span>
+          <h3 data-i18n="prog.services.legalTitle"></h3>
+          <p data-i18n="prog.services.legalText"></p>
+          <ul class="ticks" data-i18n-list="prog.services.legalList"></ul>
+          <button type="button" class="btn btn-blue btn-sm" data-contact-subject="services" data-i18n="cta.notify"></button>
+        </div>
+        <div class="card service">
+          <span class="tag" data-i18n="prog.services.soonTag"></span>
+          <h3 data-i18n="prog.services.softTitle"></h3>
+          <p data-i18n="prog.services.softText"></p>
+          <ul class="ticks" data-i18n-list="prog.services.softList"></ul>
+          <button type="button" class="btn btn-blue btn-sm" data-contact-subject="services" data-i18n="cta.notify"></button>
+        </div>
+      </div>
+      <p class="fine" data-i18n="prog.services.note"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COURSES & WORKSHOPS ===================== -->
+<section class="panel" id="panel-courses" data-panel="courses" hidden>
+  <div class="page-head page-head-leaf">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="courses.eyebrow"></p>
+      <h1 data-i18n="courses.title"></h1>
+      <p class="lead" data-i18n="courses.lead"></p>
+      <div class="cta-row">
+        <button type="button" class="btn btn-sun btn-lg" data-open-form="course" data-i18n="courses.preregister"></button>
+        <a class="btn btn-ghost btn-lg" href="#courses-catalog" data-jump data-i18n="courses.seeCatalog"></a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <nav class="jump" aria-label="On this page" data-i18n-attr="aria-label:ui.onThisPage">
+      <a href="#courses-sites" data-jump data-i18n="courses.sitesTitle"></a>
+      <a href="#courses-catalog" data-jump data-i18n="courses.catalogTitle"></a>
+      <a href="#courses-pre" data-jump data-i18n="courses.preTitle"></a>
+    </nav>
+  </div>
+  <div class="wrap section" id="courses-sites">
+    <div class="section-head">
+      <h2 data-i18n="courses.sitesTitle"></h2>
+      <p class="sub" data-i18n="courses.sitesLead"></p>
+    </div>
+    <div class="sites" id="courseSites"></div>
+    <p class="fine eco-note" data-i18n="courses.sitesNote"></p>
+  </div>
+  <div class="band band-soft" id="courses-catalog">
+    <div class="wrap section">
+      <div class="section-head">
+        <h2 data-i18n="courses.catalogTitle"></h2>
+        <p class="sub" data-i18n="courses.catalogLead"></p>
+      </div>
+      <div class="filters" id="courseLocFilters" role="group" data-i18n-attr="aria-label:courses.fLocation"></div>
+      <div class="filters filters-sm" id="courseAudFilters" role="group" data-i18n-attr="aria-label:courses.fAudience"></div>
+      <div class="course-grid" id="courseGrid"></div>
+      <p class="fine" data-i18n="courses.catalogNote"></p>
+    </div>
+  </div>
+  <div class="wrap section" id="courses-pre">
+    <div class="callout callout-big">
+      <div>
+        <h2 data-i18n="courses.preTitle"></h2>
+        <p data-i18n="courses.preText"></p>
+      </div>
+      <div class="prog-actions">
+        <button type="button" class="btn btn-sun btn-lg" data-open-form="course" data-i18n="courses.preregister"></button>
+        <button type="button" class="btn btn-ghost-dark btn-lg" data-contact-subject="courses" data-i18n="courses.teach"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= DACHIMILCO PILOT ======================= -->
+<section class="panel" id="panel-dachimilco" data-panel="dachimilco" hidden>
+  <div class="page-head page-head-dachi">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="dachi.eyebrow"></p>
+      <h1>Dachimilco</h1>
+      <p class="lead" data-i18n="dachi.lead"></p>
+      <p><span class="status status-conversation" data-i18n="dachi.statusTag"></span></p>
+      <div class="cta-row">
+        <button type="button" class="btn btn-sun btn-lg" data-open-form="dachimilco" data-i18n="dachi.supportCta"></button>
+        <a class="btn btn-ghost btn-lg" id="dachiWebsite" href="#" target="_blank" rel="noopener"></a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <nav class="jump" aria-label="On this page" data-i18n-attr="aria-label:ui.onThisPage">
+      <a href="#dachi-context" data-jump data-i18n="dachi.jContext"></a>
+      <a href="#dachi-objectives" data-jump data-i18n="dachi.jObjectives"></a>
+      <a href="#dachi-design" data-jump data-i18n="dachi.jDesign"></a>
+      <a href="#dachi-tech" data-jump data-i18n="dachi.jTech"></a>
+      <a href="#dachi-roadmap" data-jump data-i18n="dachi.jRoadmap"></a>
+      <a href="#dachi-needs" data-jump data-i18n="dachi.jNeeds"></a>
+      <a href="#dachi-support" data-jump data-i18n="dachi.jSupport"></a>
+    </nav>
+  </div>
+  <div class="wrap section" id="dachi-context">
+    <div class="two-col two-col-wide">
+      <div>
+        <h2 data-i18n="dachi.contextTitle"></h2>
+        <p data-i18n="dachi.contextText1"></p>
+        <p data-i18n="dachi.contextText2"></p>
+        <ul class="ticks" data-i18n-list="dachi.whyXochi"></ul>
+      </div>
+      <aside class="card facts">
+        <h3 data-i18n="dachi.factsTitle"></h3>
+        <dl class="ev-dl" id="dachiFacts"></dl>
+      </aside>
+    </div>
+  </div>
+  <div class="band" id="dachi-objectives">
+    <div class="wrap section">
+      <div class="section-head"><h2 data-i18n="dachi.objTitle"></h2><p class="sub" data-i18n="dachi.objLead"></p></div>
+      <div class="cards-4" data-i18n-cards="dachi.objectives" data-card-class="card card-accent"></div>
+    </div>
+  </div>
+  <div class="wrap section" id="dachi-design">
+    <div class="section-head"><h2 data-i18n="dachi.designTitle"></h2><p class="sub" data-i18n="dachi.designLead"></p></div>
+    <div class="cards-3" data-i18n-cards="dachi.configs"></div>
+    <h3 class="h-sm" data-i18n="dachi.cropsTitle"></h3>
+    <ul class="pill-list" data-i18n-list="dachi.crops"></ul>
+    <p class="fine" data-i18n="dachi.designNote"></p>
+  </div>
+  <div class="band band-soft" id="dachi-tech">
+    <div class="wrap section">
+      <div class="section-head"><h2 data-i18n="dachi.techTitle"></h2><p class="sub" data-i18n="dachi.techLead"></p></div>
+      <div class="cards-3" data-i18n-cards="dachi.tech"></div>
+      <h3 class="h-sm" data-i18n="dachi.benefitsTitle"></h3>
+      <div class="cards-3" data-i18n-cards="dachi.benefits" data-card-class="card card-accent"></div>
+    </div>
+  </div>
+  <div class="wrap section" id="dachi-roadmap">
+    <div class="section-head"><h2 data-i18n="dachi.roadmapTitle"></h2><p class="sub" data-i18n="dachi.roadmapLead"></p></div>
+    <ol class="timeline" id="dachiRoadmap"></ol>
+  </div>
+  <div class="band band-soft" id="dachi-needs">
+    <div class="wrap section">
+      <div class="section-head"><h2 data-i18n="dachi.needsTitle"></h2><p class="sub" data-i18n="dachi.needsLead"></p></div>
+      <div class="cards-4" data-i18n-cards="dachi.needs"></div>
+      <div id="dachiBudget"></div>
+    </div>
+  </div>
+  <div class="band band-blue" id="dachi-support">
+    <div class="wrap section">
+      <div class="sponsor-grid">
+        <div>
+          <p class="eyebrow" data-i18n="dachi.supportEyebrow"></p>
+          <h2 data-i18n="dachi.supportTitle"></h2>
+          <p class="sub" data-i18n="dachi.supportText"></p>
+          <ul class="ticks ticks-light" data-i18n-list="dachi.supportWays"></ul>
+          <div class="cta-row">
+            <button type="button" class="btn btn-sun btn-lg" data-open-form="dachimilco" data-i18n="dachi.supportCta"></button>
+            <a class="btn btn-ghost btn-lg" id="dachiCrowdLink" href="#" target="_blank" rel="noopener" hidden data-i18n="dachi.crowdLink"></a>
+          </div>
+          <p class="fine" data-i18n="dachi.crowdNote"></p>
+        </div>
+        <div class="dachi-courses">
+          <h3 data-i18n="dachi.coursesTitle"></h3>
+          <div id="dachiCourses"></div>
+          <a class="link-arrow light" href="#courses" data-tab-link="courses" data-i18n="courses.seeCatalog"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="fine" data-i18n="dachi.sourceNote"></p>
+  </div>
+</section>
+
+<!-- ========================= REGIONS ========================= -->
+<section class="panel" id="panel-regions" data-panel="regions" hidden>
+  <div class="page-head page-head-blue">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="reg2.eyebrow"></p>
+      <h1 data-i18n="reg2.title"></h1>
+      <p class="lead" data-i18n="reg2.lead"></p>
+      <ul class="reg-factors">
+        <li><span aria-hidden="true">☀️</span><span data-i18n="reg2.factor1"></span></li>
+        <li><span aria-hidden="true">🚜</span><span data-i18n="reg2.factor2"></span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap section">
+    <div class="regions-layout">
+      <div class="map-card">
+        <div class="map-wrap" id="mxMap"></div>
+        <div class="map-tip" id="mapTip" hidden></div>
+        <div class="region-legend" id="regionLegend" role="group" data-i18n-attr="aria-label:reg2.legend"></div>
+        <p class="fine" data-i18n="reg2.mapHint"></p>
+      </div>
+      <aside class="region-detail" id="regionDetail" aria-live="polite"></aside>
+    </div>
+  </div>
+  <div class="band band-soft">
+    <div class="wrap section">
+      <div class="section-head"><h2 data-i18n="reg2.allTitle"></h2><p class="sub" data-i18n="reg2.allLead"></p></div>
+      <div class="region-cards" id="regionCards"></div>
+      <div class="section-head reg-table-head" id="regions-summary"><h2 data-i18n="reg2.tableTitle"></h2><p class="sub" data-i18n="reg2.tableLead"></p></div>
+      <div class="table-wrap" tabindex="0"><table class="region-table" id="regionTable"></table></div>
+      <p class="fine" data-i18n="reg2.sourceNote"></p>
+      <div class="callout">
+        <div>
+          <h3 data-i18n="reg2.chapterTitle"></h3>
+          <p data-i18n="reg2.chapterText"></p>
+        </div>
+        <div class="prog-actions">
+          <button type="button" class="btn btn-sun" data-open-register data-i18n="cta.request"></button>
+          <button type="button" class="btn btn-ghost-dark" data-contact-subject="regions" data-i18n="reg2.chapterCta"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================== EVENTS ========================== -->
+<section class="panel" id="panel-events" data-panel="events" hidden>
+  <div class="page-head page-head-blue">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="ev.eyebrow"></p>
+      <h1 data-i18n="ev.title"></h1>
+      <p class="lead" data-i18n="ev.lead"></p>
+    </div>
+  </div>
+  <div class="wrap section">
+    <h2 class="h-md" data-i18n="ev.upcoming"></h2>
+    <div id="eventsUpcoming" class="events"></div>
+    <h2 class="h-md" data-i18n="ev.planned"></h2>
+    <div id="eventsPlanned" class="events"></div>
+    <h2 class="h-md" data-i18n="ev.past"></h2>
+    <div id="eventsPast" class="events"></div>
+    <div class="callout callout-region">
+      <div>
+        <h3 data-i18n="courses.evTitle"></h3>
+        <p data-i18n="courses.evText"></p>
+      </div>
+      <div class="prog-actions">
+        <a class="btn btn-blue" href="#courses" data-tab-link="courses" data-i18n="courses.seeCatalog"></a>
+        <a class="btn btn-ghost-dark" href="#dachimilco" data-tab-link="dachimilco" data-i18n="dachi.homeCta"></a>
+      </div>
+    </div>
+    <div class="callout">
+      <div>
+        <h3 data-i18n="ev.proposeTitle"></h3>
+        <p data-i18n="ev.proposeText"></p>
+      </div>
+      <button type="button" class="btn btn-blue" data-contact-subject="events" data-i18n="ev.proposeCta"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PARTNERSHIPS ======================= -->
+<section class="panel" id="panel-partnerships" data-panel="partnerships" hidden>
+  <div class="page-head page-head-blue">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="partners.eyebrow"></p>
+      <h1 data-i18n="partners.title"></h1>
+      <p class="lead" data-i18n="partners.lead"></p>
+    </div>
+  </div>
+  <div class="wrap section">
+    <h2 class="h-sm" data-i18n="partners.confirmed"></h2>
+    <div class="badges" id="partnersConfirmed"></div>
+    <h2 class="h-sm" data-i18n="partners.potential"></h2>
+    <div class="badges" id="partnersPotential"></div>
+    <h2 class="h-sm" data-i18n="partners.open"></h2>
+    <div class="badges" id="partnersSlots"></div>
+    <p class="fine" data-i18n="partners.note"></p>
+  </div>
+  <div class="wrap section" id="academic">
+    <div class="academic-card">
+      <div>
+        <span class="tag tag-free" data-i18n="academic.tag"></span>
+        <h2 data-i18n="academic.title"></h2>
+        <p data-i18n="academic.text"></p>
+        <ul class="ticks" data-i18n-list="academic.perks"></ul>
+        <p class="fine" data-i18n="academic.note"></p>
+      </div>
+      <div class="academic-cta">
+        <button type="button" class="btn btn-sun btn-lg" data-open-form="partner" data-form-preset="academia" data-i18n="academic.cta"></button>
+        <button type="button" class="btn btn-ghost-dark" data-contact-subject="partner" data-i18n="academic.cta2"></button>
+      </div>
+    </div>
+  </div>
+  <div class="band band-soft" id="ecosystem">
+    <div class="wrap section">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="part2.ecoEyebrow"></p>
+        <h2 data-i18n="part2.ecoTitle"></h2>
+        <p class="sub" data-i18n="part2.ecoLead"></p>
+      </div>
+      <div class="eco" id="ecoMap"></div>
+      <p class="fine eco-note" data-i18n="part2.ecoNote"></p>
+    </div>
+  </div>
+  <div class="wrap section">
+    <div class="section-head">
+      <h2 data-i18n="part2.waysTitle"></h2>
+    </div>
+    <div class="cards-4" data-i18n-cards="part2.ways"></div>
+    <div class="cta-row">
+      <button type="button" class="btn btn-sun btn-lg" data-open-form="partner" data-i18n="cta.partner"></button>
+      <button type="button" class="btn btn-ghost-dark btn-lg" data-open-form="sponsor" data-i18n="cta.sponsor"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== LEGISLATIVE AFFAIRS ==================== -->
+<section class="panel" id="panel-legislative" data-panel="legislative" hidden>
+  <div class="page-head page-head-sun">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="leg.eyebrow"></p>
+      <h1 data-i18n="leg.title"></h1>
+      <p class="lead" data-i18n="leg.lead"></p>
+    </div>
+  </div>
+  <div class="wrap">
+    <nav class="jump" aria-label="On this page" data-i18n-attr="aria-label:ui.onThisPage">
+      <a href="#leg-why" data-jump data-i18n="leg.jWhy"></a>
+      <a href="#leg-mexico" data-jump data-i18n="leg.jMexico"></a>
+      <a href="#leg-intl" data-jump data-i18n="leg.jIntl"></a>
+      <a href="#leg-initiative" data-jump data-i18n="leg.jInitiative"></a>
+      <a href="#leg-tax" data-jump data-i18n="leg.jTax"></a>
+    </nav>
+  </div>
+  <div class="wrap section" id="leg-why">
+    <div class="section-head">
+      <h2 data-i18n="leg.whyTitle"></h2>
+      <p class="sub" data-i18n="leg.whyLead"></p>
+    </div>
+    <div class="cards-3" data-i18n-cards="leg.why" data-card-class="card card-accent"></div>
+  </div>
+  <div class="band band-blue" id="leg-mexico">
+    <div class="wrap section">
+      <div class="section-head">
+        <h2 data-i18n="leg.mxTitle"></h2>
+      </div>
+      <div class="mx-grid">
+        <div class="stat"><span class="stat-n" data-i18n="leg.mx1n"></span><span class="stat-l" data-i18n="leg.mx1l"></span></div>
+        <div class="stat"><span class="stat-n" data-i18n="leg.mx2n"></span><span class="stat-l" data-i18n="leg.mx2l"></span></div>
+      </div>
+      <p class="fine" data-i18n="leg.mxNote"></p>
+    </div>
+  </div>
+  <div class="wrap section" id="leg-intl">
+    <div class="section-head">
+      <h2 data-i18n="leg.intlTitle"></h2>
+      <p class="sub" data-i18n="leg.intlLead"></p>
+    </div>
+    <div class="intl" id="intlList"></div>
+    <p class="fine" data-i18n="leg.intlNote"></p>
+  </div>
+  <div class="band band-merge" id="leg-initiative">
+    <div class="wrap section">
+      <div class="initiative">
+        <div>
+          <span class="status status-conversation" data-i18n="leg.initStatus"></span>
+          <h2 data-i18n="leg.initTitle"></h2>
+          <p data-i18n="leg.initText"></p>
+          <h3 class="h-sm" data-i18n="leg.initTopicsTitle"></h3>
+          <ul class="ticks" data-i18n-list="leg.initTopics"></ul>
+          <p class="fine" data-i18n="leg.initNote"></p>
+        </div>
+        <div class="support-box">
+          <h3 data-i18n="leg.supportTitle"></h3>
+          <p data-i18n="leg.supportText"></p>
+          <button type="button" class="btn btn-sun btn-lg" data-open-form="policy" data-i18n="cta.support"></button>
+          <a class="btn btn-ghost-dark btn-sm" href="#" target="_blank" rel="noopener" data-pdf-link="policyInitiativePdf" hidden></a>
+          <a class="link-arrow" href="#events" data-tab-link="events" data-i18n="leg.seeEvent"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap section" id="leg-tax">
+    <div class="section-head">
+      <h2 data-i18n="leg.taxTitle"></h2>
+      <p class="sub" data-i18n="leg.taxLead"></p>
+    </div>
+    <div class="tax-card">
+      <div class="tax-n">100%</div>
+      <div>
+        <h3 data-i18n="leg.taxCardTitle"></h3>
+        <p data-i18n="leg.taxCardText"></p>
+        <ul class="ticks" data-i18n-list="leg.taxConditions"></ul>
+        <p class="warn" data-i18n="leg.taxAdvisor"></p>
+      </div>
+    </div>
+    <h3 class="h-sm" data-i18n="leg.updatesTitle"></h3>
+    <div class="res soon-card"><p data-i18n="leg.updatesText"></p></div>
+  </div>
+</section>
+
+<!-- ========================== LIBRARY ========================= -->
+<section class="panel" id="panel-library" data-panel="library" hidden>
+  <div class="page-head page-head-agri">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="lib.eyebrow"></p>
+      <h1 data-i18n="lib.title"></h1>
+      <p class="lead" data-i18n="lib.lead"></p>
+    </div>
+  </div>
+  <div class="wrap section">
+    <div class="filters" id="libFilters" role="group"></div>
+    <div id="libGrid" class="lib"></div>
+    <div class="cta-row">
+      <button type="button" class="btn btn-ghost-dark" data-contact-subject="resource" data-i18n="lib.suggest"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ========================== MEMBERS ========================= -->
+<section class="panel" id="panel-members" data-panel="members" hidden>
+  <div class="page-head page-head-leaf">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="members.eyebrow"></p>
+      <h1 data-i18n="members.title"></h1>
+      <p class="lead" data-i18n="members.lead"></p>
+    </div>
+  </div>
+  <div class="wrap section">
+    <div class="filters" id="memberFilters" role="group"></div>
+    <div id="membersGrid" class="members"></div>
+    <div class="callout callout-discord">
+      <div>
+        <h3 data-i18n="community.membersTitle"></h3>
+        <p data-i18n="community.membersText"></p>
+      </div>
+      <a class="btn btn-discord btn-discord-solid" href="#" data-discord><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 5.3A17 17 0 0 0 15.8 4l-.5 1a15.7 15.7 0 0 0-6.6 0L8.2 4A17 17 0 0 0 4 5.3C1.4 9.2.7 13 1 16.7a17 17 0 0 0 5.2 2.6l1.1-1.8c-.6-.2-1.2-.5-1.7-.9l.4-.3a12 12 0 0 0 12 0l.4.3c-.5.4-1.1.7-1.7.9l1.1 1.8a17 17 0 0 0 5.2-2.6c.4-4.3-.7-8-3-11.4ZM8.7 14.5c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg><span data-discord-label></span></a>
+    </div>
+    <div class="callout">
+      <div>
+        <h3 data-i18n="members2.portalTitle"></h3>
+        <p data-i18n="members2.portalText"></p>
+      </div>
+      <button type="button" class="btn btn-blue" data-open-login data-i18n="ui.login"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ========================== CONTACT ========================= -->
+<section class="panel" id="panel-contact" data-panel="contact" hidden>
+  <div class="page-head page-head-blue">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="contact.eyebrow"></p>
+      <h1 data-i18n="contact.title"></h1>
+      <p class="lead" data-i18n="contact.lead"></p>
+    </div>
+  </div>
+  <div class="wrap section contact-grid">
+    <form class="form card" id="contactForm" novalidate data-form="contact">
+      <div class="field">
+        <label for="c_subject" data-i18n="form.subject"></label>
+        <select id="c_subject" name="subject" required></select>
+      </div>
+      <div class="row-2">
+        <div class="field"><label for="c_name"><span data-i18n="form.name"></span> *</label><input id="c_name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="c_org" data-i18n="form.org"></label><input id="c_org" name="organization" autocomplete="organization"></div>
+      </div>
+      <div class="row-2">
+        <div class="field"><label for="c_email"><span data-i18n="form.email"></span> *</label><input id="c_email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="c_phone" data-i18n="form.phone"></label><input id="c_phone" name="phone" type="tel" autocomplete="tel"></div>
+      </div>
+      <div class="field"><label for="c_region" data-i18n="f.labels.region"></label><select id="c_region" name="region" data-region-select></select></div>
+      <div class="field"><label for="c_msg"><span data-i18n="form.message"></span> *</label><textarea id="c_msg" name="message" rows="5" required></textarea></div>
+      <div class="field check"><input type="checkbox" id="c_consent" name="consent" required><label for="c_consent"><span data-i18n="form.consent"></span> <a href="#privacy" data-open-privacy data-i18n="form.privacyLink"></a> *</label></div>
+      <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="form-error" role="alert" hidden></p>
+      <button type="submit" class="btn btn-blue btn-lg" data-i18n="form.send"></button>
+      <div class="form-success" hidden role="status"></div>
+    </form>
+    <aside class="card contact-side">
+      <h3 data-i18n="contact.directTitle"></h3>
+      <p><a class="contact-email" href="#"></a></p>
+      <p class="fine" data-i18n="contact.directNote"></p>
+      <hr>
+      <h3 data-i18n="contact.quickTitle"></h3>
+      <ul class="quick">
+        <li><button type="button" class="link" data-open-register data-i18n="cta.request"></button></li>
+        <li><button type="button" class="link" data-open-form="sponsor" data-i18n="cta.sponsor"></button></li>
+        <li><button type="button" class="link" data-open-form="partner" data-i18n="cta.partner"></button></li>
+        <li><button type="button" class="link" data-open-form="committee" data-i18n="cta.wg"></button></li>
+        <li><button type="button" class="link" data-open-form="policy" data-i18n="cta.support"></button></li>
+      </ul>
+      <hr>
+      <h3 data-i18n="footer2.follow"></h3>
+      <div class="socials" data-socials></div>
+    </aside>
+  </div>
+</section>
+</main>
+
+<button type="button" class="btn btn-sun mobile-cta" data-open-register data-i18n="cta.request">Solicitar membresía</button>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <div class="foot-brand">AMAYAD</div>
+      <p class="foot-name">Asociación Mexicana de Agrivoltaics y Agricultura Digital</p>
+      <p data-i18n="footer.tagline"></p>
+      <div class="socials socials-dark" data-socials></div>
+      <p class="foot-discord"><a class="btn btn-discord btn-discord-solid" href="#" data-discord><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 5.3A17 17 0 0 0 15.8 4l-.5 1a15.7 15.7 0 0 0-6.6 0L8.2 4A17 17 0 0 0 4 5.3C1.4 9.2.7 13 1 16.7a17 17 0 0 0 5.2 2.6l1.1-1.8c-.6-.2-1.2-.5-1.7-.9l.4-.3a12 12 0 0 0 12 0l.4.3c-.5.4-1.1.7-1.7.9l1.1 1.8a17 17 0 0 0 5.2-2.6c.4-4.3-.7-8-3-11.4ZM8.7 14.5c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg><span data-discord-label></span></a></p>
+    </div>
+    <div>
+      <h4 class="foot-h" data-i18n="footer2.explore"></h4>
+      <ul class="foot-links">
+        <li><a href="#about" data-tab-link="about" data-i18n="nav.about"></a></li>
+        <li><a href="#membership" data-tab-link="membership" data-i18n="nav.membership"></a></li>
+        <li><a href="#programs" data-tab-link="programs" data-i18n="nav.programs"></a></li>
+        <li><a href="#courses" data-tab-link="courses" data-i18n="nav.courses"></a></li>
+        <li><a href="#dachimilco" data-tab-link="dachimilco" data-i18n="nav.dachimilco"></a></li>
+        <li><a href="#regions" data-tab-link="regions" data-i18n="nav.regions"></a></li>
+        <li><a href="#events" data-tab-link="events" data-i18n="nav.events"></a></li>
+        <li><a href="#legislative" data-tab-link="legislative" data-i18n="nav.legislative"></a></li>
+        <li><a href="#library" data-tab-link="library" data-i18n="nav.library"></a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="foot-h" data-i18n="footer2.contactTitle"></h4>
+      <ul class="foot-links">
+        <li><a class="contact-email" href="#"></a></li>
+        <li><a href="#contact" data-tab-link="contact" data-i18n="nav.contact"></a></li>
+        <li><a href="#privacy" data-open-privacy data-i18n="footer.privacy"></a></li>
+        <li><button type="button" class="foot-btn" data-open-login data-i18n="ui.login"></button></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="foot-h" data-i18n="home2.newsletterTitle"></h4>
+      <form class="form nl-form nl-foot" data-nl novalidate>
+        <div class="nl-row">
+          <label class="sr-only" for="nl_email_foot" data-i18n="form.email"></label>
+          <input id="nl_email_foot" name="email" type="email" autocomplete="email" required data-i18n-attr="placeholder:f.emailPh">
+          <button type="submit" class="btn btn-sun btn-sm" data-i18n="cta.subscribe"></button>
+        </div>
+        <div class="field check"><input type="checkbox" id="nl_consent_foot" name="consent" required><label for="nl_consent_foot"><span data-i18n="form.consent"></span> <a href="#privacy" data-open-privacy data-i18n="form.privacyLink"></a></label></div>
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="form-error" role="alert" hidden></p>
+        <div class="form-success" hidden role="status"></div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap foot-meta">
+    <p><span data-i18n="footer.founded"></span> · © <span id="year">2026</span> AMAYAD · <span data-i18n="footer2.prototype"></span></p>
+  </div>
+</footer>
+
+<!-- ===================== REGISTRATION DIALOG ===================== -->
+<dialog id="registerDialog" class="dialog" aria-labelledby="regTitle">
+  <form class="form" id="registerForm" novalidate data-form="membership">
+    <div class="dialog-head">
+      <h2 id="regTitle" data-i18n="reg.title"></h2>
+      <button type="button" class="x" data-close aria-label="Cerrar" data-i18n-attr="aria-label:ui.close">×</button>
+    </div>
+    <p class="sub" data-i18n="reg.lead"></p>
+    <div class="field">
+      <label for="r_tier"><span data-i18n="form.tier"></span> *</label>
+      <select id="r_tier" name="tier" required></select>
+    </div>
+    <div class="row-2">
+      <div class="field"><label for="r_name"><span data-i18n="form.name"></span> *</label><input id="r_name" name="name" autocomplete="name" required></div>
+      <div class="field"><label for="r_org" data-i18n="form.org"></label><input id="r_org" name="organization" autocomplete="organization"></div>
+    </div>
+    <div class="row-2">
+      <div class="field"><label for="r_role" data-i18n="form.role"></label><input id="r_role" name="role" autocomplete="organization-title"></div>
+      <div class="field"><label for="r_country"><span data-i18n="form.country"></span> *</label><input id="r_country" name="country" autocomplete="country-name" required></div>
+    </div>
+    <div class="row-2">
+      <div class="field"><label for="r_email"><span data-i18n="form.email"></span> *</label><input id="r_email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="r_phone" data-i18n="form.phone"></label><input id="r_phone" name="phone" type="tel" autocomplete="tel"></div>
+    </div>
+    <div class="field">
+      <label for="r_sector"><span data-i18n="form.sector"></span> *</label>
+      <select id="r_sector" name="sector" required></select>
+    </div>
+    <div class="field">
+      <label for="r_region" data-i18n="f.labels.region"></label>
+      <select id="r_region" name="region" data-region-select></select>
+    </div>
+    <fieldset class="field">
+      <legend data-i18n="form.interests"></legend>
+      <div class="checks" id="r_interests"></div>
+    </fieldset>
+    <div class="field"><label for="r_msg" data-i18n="form.messageOpt"></label><textarea id="r_msg" name="message" rows="3"></textarea></div>
+    <div class="field check"><input type="checkbox" id="r_consent" name="consent" required><label for="r_consent"><span data-i18n="form.consent"></span> <a href="#privacy" data-open-privacy data-i18n="form.privacyLink"></a> *</label></div>
+    <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="form-error" role="alert" hidden></p>
+    <div class="dialog-actions">
+      <button type="button" class="btn btn-ghost-dark" data-close data-i18n="ui.cancel"></button>
+      <button type="submit" class="btn btn-sun" data-i18n="reg.submit"></button>
+    </div>
+    <div class="form-success" hidden role="status"></div>
+  </form>
+</dialog>
+
+<!-- ================ GENERIC FORM DIALOG (all other forms) ================ -->
+<dialog id="formDialog" class="dialog" aria-labelledby="genTitle">
+  <form class="form" id="genForm" novalidate data-form="">
+    <div class="dialog-head">
+      <h2 id="genTitle"></h2>
+      <button type="button" class="x" data-close aria-label="Cerrar" data-i18n-attr="aria-label:ui.close">×</button>
+    </div>
+    <div id="genIntro"></div>
+    <div id="genFields"></div>
+    <div class="field check"><input type="checkbox" id="g_consent" name="consent" required><label for="g_consent"><span data-i18n="form.consent"></span> <a href="#privacy" data-open-privacy data-i18n="form.privacyLink"></a> *</label></div>
+    <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="form-error" role="alert" hidden></p>
+    <div class="dialog-actions">
+      <button type="button" class="btn btn-ghost-dark" data-close data-i18n="ui.cancel"></button>
+      <button type="submit" class="btn btn-sun" id="genSubmit"></button>
+    </div>
+    <div class="form-success" hidden role="status"></div>
+  </form>
+</dialog>
+
+<!-- ======================== SEARCH DIALOG ======================== -->
+<dialog id="searchDialog" class="dialog dialog-search" aria-label="Search" data-i18n-attr="aria-label:ui.search">
+  <div class="search-box">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    <input id="searchInput" type="search" autocomplete="off" data-i18n-attr="placeholder:ui.searchPh;aria-label:ui.search">
+    <button type="button" class="x" data-close aria-label="Cerrar" data-i18n-attr="aria-label:ui.close">×</button>
+  </div>
+  <p class="search-hint" id="searchHint" data-i18n="ui.searchHint"></p>
+  <ul class="search-results" id="searchResults" role="listbox"></ul>
+</dialog>
+
+<!-- ======================== PRIVACY DIALOG ======================== -->
+<dialog id="privacyDialog" class="dialog" aria-labelledby="privTitle">
+  <div class="dialog-head">
+    <h2 id="privTitle" data-i18n="privacy.title"></h2>
+    <button type="button" class="x" data-close aria-label="Cerrar" data-i18n-attr="aria-label:ui.close">×</button>
+  </div>
+  <!-- [VERIFICATION REQUIRED] Draft privacy notice — requires legal review. -->
+  <div class="privacy-body" id="privacyBody"></div>
+  <div class="dialog-actions"><button type="button" class="btn btn-blue" data-close data-i18n="ui.close"></button></div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="data.js"></script>
+<script src="i18n.js"></script>
+<script src="i18n-v2.js"></script>
+<script src="i18n-v21.js"></script>
+<script src="i18n-v22.js"></script>
+<script src="i18n-v24.js"></script>
+<script src="mx-map.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
